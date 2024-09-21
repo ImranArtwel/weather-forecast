@@ -1,8 +1,7 @@
 import { formatToLocalTime, getTimezone } from "../utils/dateUtils";
 
-const API_KEY = "e24e257710cd592b7bd0ef68d29d4a5c";
-const BASE_URL = "https://api.openweathermap.org/data/2.5/";
-
+const API_KEY = process.env.REACT_APP_API_KEY;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 const getWeatherData = (infoType, searchParams) => {
   const url = new URL(BASE_URL + infoType);
   url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
